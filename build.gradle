@@ -5,12 +5,14 @@ plugins {
 }
 
 group 'org.example'
-version '1.0-SNAPSHOT'
+version '0.0.1'
 
 gradlePlugin {
     plugins {
         dockerTestContainersPlugin {
             id = 'com.github.niemals.stop.dcr'
+            displayName = 'Docker Container Run Plugin to run containers for integration testing.'
+            description = 'A plugin to run containers for integration testing.'
             implementationClass = 'com.github.niemals.stop.dcr.DockerTestContainersPlugin'
         }
     }
