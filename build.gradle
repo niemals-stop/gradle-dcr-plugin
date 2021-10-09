@@ -17,6 +17,7 @@ gradlePlugin {
 }
 
 pluginBundle {
+    website = 'https://github.com/niemals-stop/gradle-dcr-plugin'
     vcsUrl = 'https://github.com/niemals-stop/gradle-dcr-plugin'
     tags = ['docker', 'container', 'test', 'testing']
 }
