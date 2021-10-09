@@ -1,10 +1,11 @@
 plugins {
     id 'java-gradle-plugin'
     id 'groovy-gradle-plugin'
+    id 'maven-publish'
     id 'com.gradle.plugin-publish' version '0.14.0'
 }
 
-group 'org.example'
+group 'com.github.niemals-top'
 version '0.0.1'
 
 gradlePlugin {
