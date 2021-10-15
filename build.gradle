@@ -5,13 +5,13 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.14.0'
 }
 
-group 'com.github.niemals-top'
+group 'com.github.niemals-stop'
 version '0.0.2'
 
 gradlePlugin {
     plugins {
         dockerTestContainersPlugin {
-            id = 'com.github.niemals-stop.dcr'
+            id = 'io.github.niemals-stop.dcr'
             displayName = 'Docker Container Run Plugin to run containers for integration testing.'
             description = 'A plugin to run containers for integration testing.'
             implementationClass = 'com.github.niemals.stop.dcr.DockerTestContainersPlugin'
