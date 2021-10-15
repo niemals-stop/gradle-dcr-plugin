@@ -1,0 +1,62 @@
+== Gradle Docker Container Run Plugin
+
+This plugin only allows to run already built images.
+
+=== Get started
+
+[source%nowrap,groovy]
+----
+plugins {
+    id 'io.github.niemals-stop.dcr'
+}
+
+//..
+test.configure { dependsOn runTestContainers }
+clean.configure { dependsOn stopTestContainers }
+
+//..
+dockerTestContainers {
+    postgres {
+        image = 'postgres:11.5'
+        ports = ['5432']
+        portsFile = "${project.buildDir}/resources/test/application-postgres.properties"
+        envVars = ['POSTGRES_USER': 'pgadm', 'POSTGRES_PASSWORD': 'pgadm']
+        volumes = ["${project.projectDir}/pg_init.sql": '/docker-entrypoint-initdb.d/01-schema.sql']
+        waitFor {
+            log = '.*DB_INITIALIZED.*'
+            timeout = 45
+        }
+    }
+}
+----
+
+=== Configuration parameters
+
+[cols="1,7"]
+|===
+|Parameter |Description
+
+|`image`
+|An image to run.
+
+|`ports`
+|A list of exposed ports.
+
+|`portsFile`
+|After a container started, the plugin writes a properties file that contains the assigned ports to the given container.
+
+|`envVars`
+|A list of environment variables to set to the container.
+
+|`volumes`
+| A list of volumes to mount to the container.
+
+|`waitFor`
+| A delay to wait until container starts.
+A value for the `log` parameter must a valid `java.util.regex.Pattern` and `timeout` is amount of seconds to wait.
+|===
+
+=== License
+This plugin is made available under the http://www.apache.org/licenses/LICENSE-2.0[Apache 2.0 License.]
+
+
