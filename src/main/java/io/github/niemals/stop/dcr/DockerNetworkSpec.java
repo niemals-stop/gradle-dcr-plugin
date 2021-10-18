@@ -1,4 +1,4 @@
-package com.github.niemals.stop.dcr;
+package io.github.niemals.stop.dcr;
 
 public class DockerNetworkSpec {
 

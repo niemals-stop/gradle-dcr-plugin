@@ -1,4 +1,4 @@
-package com.github.niemals.stop.dcr;
+package io.github.niemals.stop.dcr;
 
 import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.core.DefaultDockerClientConfig;

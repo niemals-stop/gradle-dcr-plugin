@@ -1,4 +1,4 @@
-package com.github.niemals.stop.dcr
+package io.github.niemals.stop.dcr
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
